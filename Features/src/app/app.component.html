@@ -2,11 +2,16 @@
   <img class="logo" src="/assets/images/main-page-logo-small-hat.png" />
 </div>
 
-<course-card [course]="courseDBData"></course-card>
+<div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
+<div class="courses">
 
-<course-card [course]="course1"></course-card>
+<course-card [coursedetail]="courseDBData"(courseselected)="onClickcoursecard($event)"></course-card>
+                <!-- input decorator            output decorator                  -->
+<course-card [coursedetail]="course1" (courseselected)="onClickcoursecard($event)"></course-card>
 
-<course-card [course]="course2"></course-card>
+<course-card [coursedetail]="course2"(courseselected)="onClickcoursecard($event)"></course-card>
+
+</div>
 
 
 
