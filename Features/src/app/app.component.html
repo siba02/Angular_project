@@ -2,16 +2,23 @@
   <img class="logo" src="/assets/images/main-page-logo-small-hat.png" />
 </div>
 
-<div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
+<!-- <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div> -->
 <div class="courses">
+  @for(course of courseloop; track index; let index =$index; let count=$count; let first=$first; let last=$last){
+  <course-card
+    [coursedetail]="course"
+    [index]="index"
+    [count]="count"
+    [class.is-first]="first"
+    [class.is-last]="last"
+    (courseselected)="onClickcoursecard($event)"
+  ></course-card>
+}
+<!-- <course-card [coursedetail]="course1" (courseselected)="onClickcoursecard($event)"></course-card>
 
-<course-card [coursedetail]="courseDBData"(courseselected)="onClickcoursecard($event)"></course-card>
-                <!-- input decorator            output decorator                  -->
-<course-card [coursedetail]="course1" (courseselected)="onClickcoursecard($event)"></course-card>
+<course-card [coursedetail]="course2"(courseselected)="onClickcoursecard($event)"></course-card> -->
 
-<course-card [coursedetail]="course2"(courseselected)="onClickcoursecard($event)"></course-card>
-
+@empty{
+  <h1> no course found.</h1>
+}
 </div>
-
-
-
