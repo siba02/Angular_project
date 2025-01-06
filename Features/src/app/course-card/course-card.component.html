@@ -13,12 +13,35 @@
     } @else{
     <h2>No image found</h2>
     } -->
-    <img [src]="coursedetail.iconUrl"width="300"  alt="Logo" *ngIf="isImageVisible()  else noImage" >
+    <img
+      [src]="coursedetail.iconUrl"
+      width="300"
+      alt="Logo"
+      *ngIf="isImageVisible(); else noImage"
+    />
     <ng-template #noImage>
       <h2>No image found</h2>
     </ng-template>
     <div class="course-description">{{ coursedetail.longDescription }}</div>
+                <!-- new style -->
+    <!-- <div class="coursedetail-category">
+      @switch(coursedetail.category){ @case("BEGINNER"){
+      <div class="category">Beginner</div>
+      } @case("INTERMEDIATE"){
+      <div class="category">Intermediate</div>
+      } @case("ADVANCED"){
+      <div class="category">Advanced</div>
+      } @default{
+      <div class="category">Unknown</div>
+      } }
+    </div> -->
+                       <!-- Old style -->
+    <div class="coursedetail-category" [ngSwitch]="coursedetail.category">
+      <div *ngSwitchCase="'BEGINNER'" class="category">Beginner</div>
+      <div *ngSwitchCase="'INTERMEDIATE'" class="category">Intermediate</div>
+      <div *ngSwitchCase="'ADVANCED'" class="category">Advanced</div>
+      <div *ngSwitchDefault class="category">Unknown</div>
+    </div>
     <button (click)="onCourseview()">view Course</button>
   </div>
 </div>
-

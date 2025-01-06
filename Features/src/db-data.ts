@@ -32,7 +32,7 @@ export const courses: Course[] = [
         description: "Angular for Beginners",
         iconUrl: '/assets/images/angular2-for-beginners-small-v2.png',
         longDescription: "Establish a solid layer of fundamentals, learn what's under the hood of Angular",
-        category: 'BEGINNER',
+        // category: 'BEGINNER',
         lessonsCount: 10
     },
     {
