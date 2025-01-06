@@ -3,8 +3,24 @@
 </div>
 
 <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
+
+{{startDate | date:'dd/MM/yy'}}
+
+<p>{{title | uppercase}}</p>
+<p>{{title | titlecase}}</p>
+<p>{{title | lowercase}}</p>
+<p>{{price | number:'3.3-5'}}</p>
+<p>{{rate  | percent }}</p>
+<p>{{price | currency:'INR'}}</p>
+<p>{{courseloop | json}}</p>
+<div *ngFor="let entry of testobj |keyvalue">
+  {{entry.key+ ':'+entry.value}}
+</div>
+
+
+
 <div class="courses">
-  @for(course of courseloop;
+  @for(course of courseloop; 
    track index;
    let index =$index;
    let count=$count;
@@ -22,10 +38,12 @@
     [class.is-odd]="odd"
     (courseselected)="onClickcoursecard($event)"
   ></course-card>
+
 }
 @empty{
   <h1> no course found.</h1>
 }
+
  <!-- <course-card *ngFor="let course of courseloop;
  index as  i; first as isfirst; last as islast; even as iseven; odd as isodd" 
  [coursedetail]="course" 
@@ -38,4 +56,5 @@
 <!-- <course-card [coursedetail]="course"(courseselected)="onClickcoursecard($event)"></course-card> --> 
 
 <p>text</p>
+
 </div>

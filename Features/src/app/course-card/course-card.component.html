@@ -14,11 +14,7 @@
     <h2>No image found</h2>
     } -->
     <img
-      [src]="coursedetail.iconUrl"
-      width="300"
-      alt="Logo"
-      *ngIf="isImageVisible(); else noImage"
-    />
+      [src]="coursedetail.iconUrl"width="300"alt="Logo"*ngIf="isImageVisible(); else noImage"/>
     <ng-template #noImage>
       <h2>No image found</h2>
     </ng-template>
@@ -37,10 +33,10 @@
     </div> -->
                        <!-- Old style -->
     <div class="coursedetail-category" [ngSwitch]="coursedetail.category">
-      <div *ngSwitchCase="'BEGINNER'" class="category">Beginner</div>
-      <div *ngSwitchCase="'INTERMEDIATE'" class="category">Intermediate</div>
-      <div *ngSwitchCase="'ADVANCED'" class="category">Advanced</div>
-      <div *ngSwitchDefault class="category">Unknown</div>
+      <ng-container *ngSwitchCase="'BEGINNER'" class="category">Beginner</ng-container>
+      <ng-container *ngSwitchCase="'INTERMEDIATE'" class="category">Intermediate</ng-container>
+      <ng-container *ngSwitchCase="'ADVANCED'" class="category">Advanced</ng-container>
+      <ng-container *ngSwitchDefault class="category">Unknown</ng-container>
     </div>
     <button (click)="onCourseview()">view Course</button>
   </div>
