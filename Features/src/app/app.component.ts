@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { courses } from '../db-data';
 import { Course } from '../model/Course';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CourseCardComponent ],
+  imports: [CourseCardComponent,NgIf ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

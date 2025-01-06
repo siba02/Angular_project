@@ -2,23 +2,40 @@
   <img class="logo" src="/assets/images/main-page-logo-small-hat.png" />
 </div>
 
-<!-- <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div> -->
+<div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
 <div class="courses">
-  @for(course of courseloop; track index; let index =$index; let count=$count; let first=$first; let last=$last){
+  @for(course of courseloop;
+   track index;
+   let index =$index;
+   let count=$count;
+   let first=$first;
+   let last=$last;
+   let even=$even;
+   let odd=$odd){
   <course-card
     [coursedetail]="course"
     [index]="index"
     [count]="count"
     [class.is-first]="first"
     [class.is-last]="last"
+    [class.is-even]="even"
+    [class.is-odd]="odd"
     (courseselected)="onClickcoursecard($event)"
   ></course-card>
 }
-<!-- <course-card [coursedetail]="course1" (courseselected)="onClickcoursecard($event)"></course-card>
-
-<course-card [coursedetail]="course2"(courseselected)="onClickcoursecard($event)"></course-card> -->
-
 @empty{
   <h1> no course found.</h1>
 }
+ <!-- <course-card *ngFor="let course of courseloop;
+ index as  i; first as isfirst; last as islast; even as iseven; odd as isodd" 
+ [coursedetail]="course" 
+ [class.is-first]="isfirst"
+ [class.is-last]="islast"
+ [class.is-even]="iseven"
+ [class.is-odd]="isodd"
+ (courseselected)="onClickcoursecard($event)"></course-card> -->
+
+<!-- <course-card [coursedetail]="course"(courseselected)="onClickcoursecard($event)"></course-card> --> 
+
+<p>text</p>
 </div>

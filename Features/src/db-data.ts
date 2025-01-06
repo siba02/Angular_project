@@ -5,7 +5,7 @@ export const courses: Course[] = [
     {
         id: 1,
         description: "Angular Core Deep Dive",
-        iconUrl: '/assets/images/angular-core-in-depth-small.png',
+        // iconUrl: '/assets/images/angular-core-in-depth-small.png',
         longDescription: "A detailed walk-through of the most important part of Angular - the Core and Common modules",
         lessonsCount: 10,
         category: 'INTERMEDIATE'
@@ -39,7 +39,7 @@ export const courses: Course[] = [
         id: 5,
         description: 'Angular Security Course',
         longDescription: "Learn Web Security Fundamentals and apply them to defend an Angular / Node Application from multiple types of attacks.",
-        iconUrl: '/assets/images/security-cover-small-v2.png',
+        // iconUrl: '/assets/images/security-cover-small-v2.png',
         category: 'ADVANCED',
         lessonsCount: 11
     },
@@ -55,7 +55,7 @@ export const courses: Course[] = [
         id: 7,
         description: 'Angular Advanced Course',
         longDescription: "Learn Advanced Angular functionality typically used in Library Development. Advanced Components, Directives, Testing, Npm",
-        iconUrl: '/assets/images/advanced_angular-small-v3.png',
+        // iconUrl: '/assets/images/advanced_angular-small-v3.png',
         category: 'ADVANCED',
         lessonsCount: 0
     },

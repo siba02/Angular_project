@@ -1,15 +1,24 @@
 <div class="courses">
-    <div class="course-card">
-      {{index+1}}
-      {{count}}
-      <div class="course-title">
-        {{coursedetail.description }}
-      </div>
-      <img width="300" src={{coursedetail.iconUrl}} alt="Logo">
-      <div class="course-description">{{coursedetail.longDescription}}</div>
-        <button (click)="onCourseview()">view Course</button>
+  <div class="course-card">
+    {{ index + 1 }}
+    {{ count }}
+    <div class="course-title">
+      {{ coursedetail.description }}
     </div>
-  </div>
-  
+    <!-- @ifNgClassComponent, Classoursedetail.id==1){
+    <h2>This is ID 1</h2>
+    } @else if(coursedetail.iconUrl){
 
-  
+    <img width="300" src="{{ coursedetail.iconUrl }}" alt="Logo" />
+    } @else{
+    <h2>No image found</h2>
+    } -->
+    <img [src]="coursedetail.iconUrl"width="300"  alt="Logo" *ngIf="isImageVisible()  else noImage" >
+    <ng-template #noImage>
+      <h2>No image found</h2>
+    </ng-template>
+    <div class="course-description">{{ coursedetail.longDescription }}</div>
+    <button (click)="onCourseview()">view Course</button>
+  </div>
+</div>
+

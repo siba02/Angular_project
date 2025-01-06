@@ -14,11 +14,11 @@
 }
 
 :host.is-even {
-  background: lightgray;
+  background:lawngreen;
 }
 
 :host.is-odd {
-  background: lightcyan;
+  background:blueviolet;
 }
 
 :host-context(.salmon-theme) .course-card {
