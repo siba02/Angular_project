@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { courses } from '../../db-data';
 import { Course } from '../../model/Course';
-import { NgClass, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass],
+  imports: [NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass,NgStyle],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })
@@ -46,4 +46,18 @@ cardclasses(){
   }
 }
 
+
+cardStyles(){
+  if(this.coursedetail.category == 'BEGINNER'){
+  // return {'text-decoration':this.coursedetail.category == 'BEGINNER'?"underline":''}
+  return {'text-decoration':'underline'}
+ }else{
+  return {'color':'blue'}
+ }
+}
+
+// cardStyles(){
+//   return {'background-image': 'url('+this.coursedetail.iconUrl+')'}
+//   }
+  
 }
