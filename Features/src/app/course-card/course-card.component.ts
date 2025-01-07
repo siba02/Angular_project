@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { courses } from '../../db-data';
 import { Course } from '../../model/Course';
-import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { NgClass, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault],
+  imports: [NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })
@@ -34,6 +34,16 @@ export class CourseCardComponent {
 
 isImageVisible(){
   return this.coursedetail.iconUrl;
+}
+
+cardclasses(){
+  // return 'beginner'
+  // return {'beginner':true}
+  if(this.coursedetail.category == 'BEGINNER'){
+    return  ['beginner'] 
+  }else{
+    return ''
+  }
 }
 
 }

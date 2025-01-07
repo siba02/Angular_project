@@ -8,8 +8,9 @@ import { CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, KeyValuePipe, LowerCaseP
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CourseCardComponent,NgIf,NgFor ,DatePipe,UpperCasePipe,TitleCasePipe,
-          LowerCasePipe,DecimalPipe,PercentPipe,CurrencyPipe,JsonPipe,KeyValuePipe],
+  imports: [CourseCardComponent,NgIf,
+    // NgFor,DatePipe,UpperCasePipe,TitleCasePipe,LowerCasePipe,DecimalPipe,PercentPipe,CurrencyPipe,JsonPipe,KeyValuePipe
+        ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -58,4 +58,8 @@
   font-size: 20;
 }
 
+.course-card.beginner {
+  background-color:aqua;
+}
+
 
