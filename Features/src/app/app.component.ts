@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, viewChild, ViewChild, viewChildren, ViewChildren } from '@angular/core';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { courses } from '../db-data';
 import { Course } from '../model/Course';
@@ -8,7 +8,7 @@ import { CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, KeyValuePipe, LowerCaseP
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CourseCardComponent,NgIf],
+  imports: [CourseCardComponent,NgFor,NgIf],
     // NgFor,DatePipe,UpperCasePipe,TitleCasePipe,LowerCasePipe,DecimalPipe,PercentPipe,CurrencyPipe,JsonPipe,KeyValuePipe
         
   templateUrl: './app.component.html',
@@ -42,16 +42,27 @@ card2!: CourseCardComponent;
 @ViewChild('container')
 containerDiv !:ElementRef;
 
+@ViewChildren('courseImg')
+courseImg!: ElementRef;
+
+@ViewChildren(CourseCardComponent)
+cards!:QueryList<CourseCardComponent>;
+
 constructor(){
-  console.log('constructor-card:',this.card1);
-  console.log('constructor-card:',this.card2);
-  console.log('constructor-containerDiv:',this.containerDiv);
+  // console.log('constructor-card:',this.card1);
+  // console.log('constructor-card:',this.card2);
+  // console.log('constructor-containerDiv:',this.containerDiv);
+  // console.log('constructor - courseImg:',this.courseImg)
 }
   ngAfterViewInit(): void {
-    console.log('card:',this.card1);
-    console.log('card:',this.card2);
-    console.log('containerDiv:',this.containerDiv);
+    // console.log('card:',this.card1);
+    // console.log('card:',this.card2);
+    // console.log('containerDiv:',this.containerDiv); 
     // this.courseloop[0].description="test"
+    // console.log('ngAfterviewinit - courseImg:',this.courseImg)
+    console.log('cards:', this.cards.changes.subscribe(
+      card =>console.log(card)
+    ));
   }
 
 
@@ -64,6 +75,18 @@ constructor(){
     // console.log('card:',this.card2.coursedetail.description);
     // console.log('containerDiv:',this.containerDiv);
 
+  }
+
+  onCourseEdited(){
+    this.courseloop.push({
+      id: 6,
+      description: 'Angular PWA Course',
+      longDescription: "Learn Angular Progressive Web Applications, build the future of the Web Today.",
+      iconUrl: '/assets/images/angular-pwa-course.png',
+      category: 'ADVANCED',
+      lessonsCount: 8
+
+    })
   }
   
 }

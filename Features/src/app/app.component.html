@@ -2,6 +2,8 @@
   <img class="logo" src="/assets/images/main-page-logo-small-hat.png" />
 </div>
 
+<button (click)="onCourseEdited()">Edit course</button>
+
 <div *ngIf="viewedCourse.description">{{viewedCourse.description+' viewed.'}}</div>
 
 <!-- {{startDate | date:'dd/MM/yy'}}
@@ -53,10 +55,17 @@
  [class.is-odd]="isodd"
  (courseselected)="onClickcoursecard($event)"></course-card> -->
 
-<course-card #cardRef1 [coursedetail]="courseloop[0]"(courseselected)="onClickcoursecard($event)"></course-card>
+ <course-card *ngFor="let course of courseloop;"
+  [coursedetail]="course"(courseselected)="onClickcoursecard($event)">
+  <img [src]="course.iconUrl"width="300"alt="Logo">
+  <h1>This is the content</h1>
+
+ </course-card>
+
+<!-- <course-card #cardRef1 [coursedetail]="courseloop[0]"(courseselected)="onClickcoursecard($event)"></course-card>
 
 <course-card #cardRef2 [coursedetail]="courseloop[1]"(courseselected)="onClickcoursecard($event)"></course-card>
-
+ -->
 
 
 <p>text</p>

@@ -6,7 +6,7 @@ import { NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from 
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass,NgStyle],
+  imports: [NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass,NgStyle],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })

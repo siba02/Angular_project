@@ -15,10 +15,12 @@
     } @else{
     <h2>No image found</h2>
     } -->
-    <img [src]="coursedetail.iconUrl"width="300"alt="Logo"*ngIf="isImageVisible(); else noImage"/>
-    <ng-template #noImage>
+
+    <ng-content></ng-content>
+    <!-- <img [src]="coursedetail.iconUrl"width="300"alt="Logo"*ngIf="isImageVisible(); else noImage" #courseImg> -->
+    <!-- <ng-template #noImage>
       <h2>No image found</h2>
-    </ng-template>
+    </ng-template> -->
     <div class="course-description">{{ coursedetail.longDescription }}</div>
                 <!-- new style -->
     <!-- <div class="coursedetail-category">
