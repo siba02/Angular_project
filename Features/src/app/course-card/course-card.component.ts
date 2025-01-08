@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { courses } from '../../db-data';
 import { Course } from '../../model/Course';
 import { NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
@@ -16,11 +16,11 @@ export class CourseCardComponent {
  @Input({required: true})
   coursedetail!:Course 
 
-  @Input({required: true})
-  index!: number; 
+//   @Input({required: true})
+//   index!: number; 
 
-  @Input({required: true})
-  count!: number; 
+//   @Input({required: true})
+//   count!: number; 
 
 
 

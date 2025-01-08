@@ -19,8 +19,8 @@
 
 
 
-<div class="courses">
-  @for(course of courseloop; 
+<div class="courses" #container>
+  <!-- @for(course of courseloop; 
    track index;
    let index =$index;
    let count=$count;
@@ -42,7 +42,7 @@
 }
 @empty{
   <h1> no course found.</h1>
-}
+} -->
 
  <!-- <course-card *ngFor="let course of courseloop;
  index as  i; first as isfirst; last as islast; even as iseven; odd as isodd" 
@@ -53,7 +53,11 @@
  [class.is-odd]="isodd"
  (courseselected)="onClickcoursecard($event)"></course-card> -->
 
-<!-- <course-card [coursedetail]="course"(courseselected)="onClickcoursecard($event)"></course-card> --> 
+<course-card #cardRef1 [coursedetail]="courseloop[0]"(courseselected)="onClickcoursecard($event)"></course-card>
+
+<course-card #cardRef2 [coursedetail]="courseloop[1]"(courseselected)="onClickcoursecard($event)"></course-card>
+
+
 
 <p>text</p>
 
