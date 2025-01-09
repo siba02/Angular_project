@@ -5,7 +5,7 @@ export const courses: Course[] = [
     {
         id: 1,
         description: "Angular Core Deep Dive",
-        // iconUrl: '/assets/images/angular-core-in-depth-small.png',
+        iconUrl: '/assets/images/angular-core-in-depth-small.png',
         longDescription: "A detailed walk-through of the most important part of Angular - the Core and Common modules",
         lessonsCount: 10,
         category: 'INTERMEDIATE'
@@ -13,7 +13,7 @@ export const courses: Course[] = [
     {
         id: 2,
         description: "RxJs In Practice Course",
-        iconUrl: '/assets/images/rxjs-in-practice-course.png',
+        // iconUrl: '/assets/images/rxjs-in-practice-course.png',
         longDescription: "Understand the RxJs Observable pattern, learn the RxJs Operators via practical examples",
         category: 'BEGINNER',
         lessonsCount: 10
@@ -30,7 +30,7 @@ export const courses: Course[] = [
     {
         id: 4,
         description: "Angular for Beginners",
-        iconUrl: '/assets/images/angular2-for-beginners-small-v2.png',
+        // iconUrl: '/assets/images/angular2-for-beginners-small-v2.png',
         longDescription: "Establish a solid layer of fundamentals, learn what's under the hood of Angular",
         // category: 'BEGINNER',
         lessonsCount: 10

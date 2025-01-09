@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ContentChild, ContentChildren, ElementRef, EventEmitter, Input, Output, QueryList, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChild, ContentChildren, ElementRef, EventEmitter, Input, Output, QueryList, TemplateRef, ViewChild } from '@angular/core';
 import { courses } from '../../db-data';
 import { Course } from '../../model/Course';
 import { NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
@@ -36,6 +36,11 @@ image3!:ElementRef
 
 @ContentChildren(CourseCardComponent)
 images!:QueryList<ElementRef>
+
+
+@Input()
+noImageTpl!: TemplateRef<any>;
+
 
 ngAfterViewInit(): void {
   // console.log('image',this.image1);

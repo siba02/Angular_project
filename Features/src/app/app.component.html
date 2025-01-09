@@ -66,19 +66,46 @@
 
 <course-card #cardRef2 [coursedetail]="courseloop[1]"(courseselected)="onClickcoursecard($event)"></course-card>
  -->
- <course-card  [coursedetail]="courseloop[0]"(courseselected)="onClickcoursecard($event)">
-  <img  #courseimage1 class="course-image" [src]="courseloop[0].iconUrl"width="300"alt="Logo">
-  <img  #courseimage2 class="course-image" [src]="courseloop[1].iconUrl"width="300"alt="Logo">
-  <img  #courseimage3 class="course-image" [src]="courseloop[2].iconUrl"width="300"alt="Logo">
-  <div class="course-description">{{ courseloop[0].longDescription }}</div>
-  <h1>This is the content</h1>
 
+ <ng-template #blankImage let-courseName="description">
+  <p class="warn">{{courseName}} has no image yet</p>
+  <img src="/assets/images/empty-image.png">
+</ng-template>
+
+<ng-container *ngTemplateOutlet="blankImage; context: {description: courseloop[0].description}"> </ng-container> 
+
+    <ng-container *ngTemplateOutlet="blankImage; context: {description: courseloop[1].description}"> </ng-container>
+
+    <hr>
+    <hr>
+
+
+
+
+    <course-card  [coursedetail]="courseloop[0]" (courseselected)="onClickcoursecard($event)"
+    [noImageTpl] = "blankImage" >
+
+  <img   class="course-image" [src]="courseloop[0].iconUrl"width="300"alt="Logo">
+
+  <!-- <img  #courseimage2 class="course-image" [src]="courseloop[1].iconUrl"width="300"alt="Logo">
+
+  <img  #courseimage3 class="course-image" [src]="courseloop[2].iconUrl"width="300"alt="Logo"> -->
+
+  <div class="course-description">{{ courseloop[0].longDescription }}</div>
+<!-- 
+  <h1>This is the content</h1> -->
+
+  <!-- <app-course-image [src]="courseloop[0].iconUrl"></app-course-image> -->
  </course-card>
 
- <course-card  [coursedetail]="courseloop[1]"(courseselected)="onClickcoursecard($event)">
-  <img  #courseimage class="course-image" [src]="courseloop[1].iconUrl"width="300"alt="Logo">
+ <course-card  [coursedetail]="courseloop[1]" (courseselected)="onClickcoursecard($event)"
+    [noImageTpl] = "blankImage">
+  <img   class="course-image" [src]="courseloop[1].iconUrl"width="300"alt="Logo">
+
+  <!-- <app-course-image [src]="courseloop[1].iconUrl"></app-course-image> -->
+
   <div class="course-description">{{ courseloop[1].longDescription }}</div>
-  <p>This is the paragraph content</p>
+  <!-- <p>This is the paragraph content</p> -->
 
  </course-card>
 

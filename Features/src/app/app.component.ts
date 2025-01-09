@@ -2,13 +2,14 @@ import { AfterViewInit, Component, ElementRef, QueryList, viewChild, ViewChild, 
 import { CourseCardComponent } from './course-card/course-card.component';
 import { courses } from '../db-data';
 import { Course } from '../model/Course';
-import { CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, KeyValuePipe, LowerCasePipe, NgFor, NgIf, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, DecimalPipe, JsonPipe, KeyValuePipe, LowerCasePipe, NgFor, NgIf, NgTemplateOutlet, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CourseImageComponent } from './course-image/course-image.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CourseCardComponent,NgIf],
+  imports: [CourseCardComponent,NgIf,NgTemplateOutlet],
     // NgFor,DatePipe,UpperCasePipe,TitleCasePipe,LowerCasePipe,DecimalPipe,PercentPipe,CurrencyPipe,JsonPipe,KeyValuePipe
         
   templateUrl: './app.component.html',
@@ -75,6 +76,10 @@ constructor(){
     // console.log('card:',this.card2.coursedetail.description);
     // console.log('containerDiv:',this.containerDiv);
 
+  }
+
+  trackCourse(index: number){
+    return index;
   }
 
   onCourseEdited(){
