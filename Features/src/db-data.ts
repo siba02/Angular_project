@@ -13,7 +13,7 @@ export const courses: Course[] = [
     {
         id: 2,
         description: "RxJs In Practice Course",
-        // iconUrl: '/assets/images/rxjs-in-practice-course.png',
+        iconUrl: '/assets/images/rxjs-in-practice-course.png',
         longDescription: "Understand the RxJs Observable pattern, learn the RxJs Operators via practical examples",
         category: 'BEGINNER',
         lessonsCount: 10
