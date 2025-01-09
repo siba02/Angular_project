@@ -55,17 +55,33 @@
  [class.is-odd]="isodd"
  (courseselected)="onClickcoursecard($event)"></course-card> -->
 
- <course-card *ngFor="let course of courseloop;"
+ <!-- <course-card *ngFor="let course of courseloop;"
   [coursedetail]="course"(courseselected)="onClickcoursecard($event)">
   <img [src]="course.iconUrl"width="300"alt="Logo">
   <h1>This is the content</h1>
 
- </course-card>
+ </course-card> -->
 
 <!-- <course-card #cardRef1 [coursedetail]="courseloop[0]"(courseselected)="onClickcoursecard($event)"></course-card>
 
 <course-card #cardRef2 [coursedetail]="courseloop[1]"(courseselected)="onClickcoursecard($event)"></course-card>
  -->
+ <course-card  [coursedetail]="courseloop[0]"(courseselected)="onClickcoursecard($event)">
+  <img  #courseimage1 class="course-image" [src]="courseloop[0].iconUrl"width="300"alt="Logo">
+  <img  #courseimage2 class="course-image" [src]="courseloop[1].iconUrl"width="300"alt="Logo">
+  <img  #courseimage3 class="course-image" [src]="courseloop[2].iconUrl"width="300"alt="Logo">
+  <div class="course-description">{{ courseloop[0].longDescription }}</div>
+  <h1>This is the content</h1>
+
+ </course-card>
+
+ <course-card  [coursedetail]="courseloop[1]"(courseselected)="onClickcoursecard($event)">
+  <img  #courseimage class="course-image" [src]="courseloop[1].iconUrl"width="300"alt="Logo">
+  <div class="course-description">{{ courseloop[1].longDescription }}</div>
+  <p>This is the paragraph content</p>
+
+ </course-card>
+
 
 
 <p>text</p>
